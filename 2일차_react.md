@@ -72,7 +72,7 @@ React는 **<span style="color: #4ca8c7">Components</span>** 와 **<span style="c
 
 **<span style="color: #4ca8c7">props</span>** 란 속성을 나타내는 **읽기 전용** 데이터입니다.
 
-읽기 전용인 이유는 모든 React 컴포넌트는 **<span style="color: #4ca8c7">순수 함수</span>** 처럼 동작해야 한다고 권장합니다.
+읽기 전용인 이유는 모든 React 컴포넌트는 **<span style="color: #4ca8c7">순수 함수</span>** 처럼 동작해야 한다고 권장하기 때문입니다.
 
 ```jsx
 function Welcome(props) {
@@ -97,6 +97,7 @@ const element = <Welcome name="JaeHak" />
 
 - **함수 컴포넌트**
   - 기존 javascript의 함수처럼 선언
+  - **JSX**를 `return` 하여 렌더링
   - 예제
   
     ```jsx
@@ -209,7 +210,7 @@ class App extends React.Component {
   };
 
   add = () => {
-    /* state를 직접 변경 이 코드는 사용하면 안됩니다. */
+    /* state를 직접 변경, 이 코드는 사용하면 안됩니다. */
     // this.state.count++;
 
     /* setState() 를 통한 state 변경 */
@@ -232,7 +233,7 @@ class App extends React.Component {
 
 ### 라이프 사이클
 
-react는 컴포넌트가 마운트(Virtual DOM에 삽입) 된 직후를 구분하는 **라이프 사이클**이라는 것을 가집니다.
+react는 컴포넌트가 마운트(***Virtual DOM*** 에 삽입) 하고 업데이트 및 소멸하기까지 과정인 **라이프 사이클**이라는 것을 가집니다.
 
 <p align="center">
   <img src="./2_day_imgs/life_cycle.PNG" />
@@ -300,7 +301,7 @@ ReactDOM.render(
 );
 ```
 
-1. `<Clock />`가 `ReactDOM.render()`로 전달되었을 때 React는 Clock 컴포넌트의 constructor를 호출
+1. `<Clock />`가 `ReactDOM.render()`로 전달되었을 때 React는 Clock 컴포넌트의 `constructor()`를 호출
 2. React는 Clock 컴포넌트의 `render()` 를 호출
 3. Clock 출력값이 **DOM**에 삽입되면, React는 `componentDidMount()` 메서드를 호출
 
@@ -310,7 +311,7 @@ ReactDOM.render(
 
 ### state, props 비동기적 업데이트
 
-`this.props`와 `this.state`가 비동기적으로 업데이트될 수 있기 때문에 다음 `state`를 계산할 때 해당 값에 의존하면 안된다.
+`this.props`와 `this.state`가 비동기적으로 업데이트될 수 있기 때문에 다음 `state`를 계산할 때 해당 값에 의존하면 안됩니다.
 
 아래와 같이 하면 업데이트 실패할 수 있습니다.
 
@@ -342,7 +343,7 @@ this.setState(function(state, props) {
 
 ### state 업데이트 주의사항
 
-`setState()`를 호출할 때 React는 제공한 객체를 현재 `state`로 병합한다.
+`setState()`를 호출할 때 React는 제공한 객체를 현재 `state`로 병합합니다.
 
 ```jsx
 import React from "react";
@@ -373,4 +374,3 @@ class MyClass extends React.Componenet {
   }
 }
 ```
-
