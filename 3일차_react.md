@@ -119,7 +119,7 @@ react에서 `false` 를 반환해도 기본 동작을 방지 못합니다.
   >
   > 더 자세한 내용은 [MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)을 참조
 
-  > 📖 **브라우저의 기본동작**에 대해서 더 자세한 내용은 [모던 JavaScript 튜토리얼](https://ko.javascript.info/default-browser-action)을 참조
+  > 📖 **브라우저의 이벤트 기본동작**에 대해서 더 자세한 내용은 [모던 JavaScript 튜토리얼](https://ko.javascript.info/default-browser-action)을 참조
 
   <br/>
 
@@ -156,7 +156,7 @@ react에서 `false` 를 반환해도 기본 동작을 방지 못합니다.
   >
   > react는 브라우저 내장 이벤트를 **[SyntheticEvent 객체](https://ko.reactjs.org/docs/events.html)** 로 래핑하여 모든 브라우저에서 동일한 이벤틀 처리를 보장합니다.  
   > **SyntheticEvent 객체**가 래핑한 이벤트 객체를 **합성 이벤트**라고 합니다.  
-  > 이 **합성 이벤트**를 사용함으로써 `addEventListener()`를 호출할 필요가 없습니다.
+  > 이 **합성 이벤트**를 사용함으로써 이벤트 리스너를 등록하기 위해 `addEventListener()`를 호출할 필요가 없습니다.
 
 <br/>
 
@@ -443,6 +443,8 @@ function List(props) {
   )
 }
 ```
+
+<br/>
 
 ### Key는 형제 사이에서만 고유한 값
 
