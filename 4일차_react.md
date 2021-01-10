@@ -126,7 +126,7 @@ class EssayForm extends React.Component {
 ### select 태그
 
 HTML에서 `<select>`는 드롭 다운 목록을 만듭니다.
-그리고 선택된 `<option>` 에 `seleted` 속성이 추가됩니다.
+그리고 선택된 `<option>` 에 `selected` 속성이 추가됩니다.
 
 ```jsx
 <select>
