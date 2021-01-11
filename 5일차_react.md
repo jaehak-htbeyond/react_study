@@ -9,7 +9,7 @@
 
 ### 합성
 
-**합성**이란 서로 다른 객체를 여러개 붙여 새 기능이나 객체를 구성하는 것입니다.
+**합성**이란 서로 다른 객체를 여러개 붙여 새 기능이나 객체를 구성하는 것입니다.  
 즉, 부모, 자식 관계가 아닌 것들을 붙여 만든 컴포넌트를 뜻합니다.
 
 - **컴포넌트에서 다른 컴포넌트를 담기**
@@ -90,8 +90,7 @@
 
 ### 특수화
 
-특수한 컴포넌트를 고려해야하는 경우가 있습니다.
-
+특수한 컴포넌트를 고려해야하는 경우가 있습니다.  
 합성을 통해서 `props`에 따라 컴포넌트의 내용이 결정될 수 있게 할 수 있습니다.
 
 ```jsx
@@ -172,7 +171,7 @@ class Main extends React.Component{
 <br/>
 
 <p align="center">
-  <img src="./5_day_imgs/inherit.PNG">
+  <img src="./5_day_imgs/inherit.png">
 </p>
 
 <br/>
@@ -198,7 +197,7 @@ class Main extends React.Component{
 ## 12. react로 생각하기
 
 이 장은 react 앱을 설계하기 위한 내용입니다.  
-react 앱을 작성기 전 아래와 같은 설계 단계가 공식문서에 있습니다.
+react 앱을 작성기 전 아래와 같은 설계 단계가 [react 공식문서](https://ko.reactjs.org/docs/thinking-in-react.html)에 있습니다.
 
 <br/>
 
@@ -305,7 +304,7 @@ react 는 단방향 데이터 흐름을 가지기 때문에 이를 정하기가 
 ### 예제 - 1단계 UI를 컴포넌트 계층 구조로 나누기
 
 <p align="center">
-  <img src="./5_day_imgs/distribute.PNG" />
+  <img src="./5_day_imgs/distribute.png" />
 </p>
 
 <br/>
