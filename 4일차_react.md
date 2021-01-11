@@ -6,8 +6,7 @@
 <br/>
 
 ## 9. 폼
-
-### HTML의 폼
+ㄴ
 
 HTML의 `<input>`, `<textarea>`, `<select>` 같은 **폼 엘리먼트**는 사용자의 입력에 따라 자신의 state를 관리 및 업데이트 합니다.
 
@@ -177,16 +176,76 @@ class FlavorForm extends React.Component {
 ```
 
 > `<select>` 에 `mutliple` 옵션을 허용하면 `value` 속성에 배열을 전달할 수 있습니다.
-
-```jsx
-render() {
-  return (
-    <select multiple={true} value={['B', 'C']}>
-    { /* ... */ }
-  );
-}
-`+
-```
+>
+> ```jsx
+> render() {
+>   return (
+>     <select multiple={true} value={['B', 'C']}>
+>     { /* ... */ }
+>   );
+> }
+> `+
+> ```
+>
+> 좀 더 어려운 예는 아래와 같습니다.
+>
+> ```js
+> class FlavorForm extends React.Component {
+>   constructor(props) {
+>     super(props);
+>     this.state = {value: []};
+> 
+>     this.handleChange = this.handleChange.bind(this);
+>     this.handleSubmit = this.handleSubmit.bind(this);
+>   }
+> 
+>   handleChange(event) {
+>     const selected=[];
+>     
+>     // HTMLSelectElement.selectedOptions
+>     // <select>, <optgroup>, <datalist> 의 하위 HTML 요소들 가저옴
+>     let selectedOption=(event.target.selectedOptions);
+>  
+>     for (let i = 0; i < selectedOption.length; i++){
+>         // selectedOption.item(i)
+>         // i번째 요소
+>         selected.push(selectedOption.item(i).value);
+>     }
+>       
+>     this.setState({value: selected});
+>     
+>     console.log(this.state);
+>   }
+> 
+>   handleSubmit(event) {
+>     alert('Your favorite flavor is: ' + this.state.value);
+>     event.preventDefault();
+>   }
+> 
+>   render() {
+>     return (
+>       <form onSubmit={this.handleSubmit}>
+>         <label>
+>           Pick your favorite flavor:
+>           <select value={this.state.value} multiple={true} onChange={this.handleChange}>
+>             <option value="grapefruit">Grapefruit</option>
+>             <option value="lime">Lime</option>
+>             <option value="coconut">Coconut</option>
+>             <option value="mango">Mango</option>
+>           </select>
+>         </label>
+>         <input type="submit" value="Submit" />
+>         <button onClick={() => {console.log(this.state)}}>console.log</button>
+>       </form>
+>     );
+>   }
+> }
+> 
+> ReactDOM.render(
+>   <FlavorForm />,
+>   document.getElementById('root')
+> );
+> ```
 
 <br />
 
