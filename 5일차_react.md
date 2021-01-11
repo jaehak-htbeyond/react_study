@@ -171,7 +171,7 @@ class Main extends React.Component{
 <br/>
 
 <p align="center">
-  <img src="./5_day_imgs/inherit.png">
+  <img src="./5_day_imgs/inherit.PNG">
 </p>
 
 <br/>
@@ -283,7 +283,7 @@ react 는 단방향 데이터 흐름을 가지기 때문에 이를 정하기가 
 - **디자인 목업**
 
 <p align="center">
-  <img src="./5_day_imgs/mockUp.PNG" />
+  <img src="./5_day_imgs/mockUp.png" />
 </p>
 
 - **JSON API**
