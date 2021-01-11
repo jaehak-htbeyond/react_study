@@ -213,7 +213,10 @@ class FlavorForm extends React.Component {
 >     }
 >       
 >     this.setState({value: selected});
->     
+>
+>     // setState()는 비동기 함수이기 때문에 변경된 props가
+>     // 아래 console.log() 에서 변경되지 않는 것으로 보일 수 있습니다.
+>     // 실제로는 변경이 됩니다.
 >     console.log(this.state);
 >   }
 > 
@@ -422,7 +425,9 @@ class Reservation extends React.Component {
 > }
 > ```
 
-> 폼 제어에 대한 완전한 해결책은 **[Formilk](https://formik.org/)** 를 사용하는 것입니다.
+<br/>
+
+> 폼 제어에 대한 완전한 해결책은 **[Formik](https://formik.org/)** 를 사용하는 것입니다.
 
 <br/>
 
