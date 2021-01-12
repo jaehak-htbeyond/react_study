@@ -130,10 +130,10 @@ class Vehicle extends React.Component{
     this.className = 'Vehicle';
   }
 
-  render(args) {
+  render() {
     return (
       <h1 className={this.className}>
-        {this.props.children}{args}
+        {this.props.children}
       </h1>
     );
   }
