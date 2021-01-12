@@ -130,7 +130,10 @@ class Vehicle extends React.Component{
     this.className = 'Vehicle';
   }
 
-  render() {
+  // 예젱
+  render(args) {
+    console.log(args);        // undefined
+    
     return (
       <h1 className={this.className}>
         {this.props.children}
@@ -156,7 +159,7 @@ class Bike extends Vehicle{
 }
 
 class Main extends React.Component{
-  render(){
+  render() {
     return (
       <React.Fragment>
         <Vehicle>Vehicle</Vehicle>
@@ -174,7 +177,7 @@ class Main extends React.Component{
   <img src="./5_day_imgs/inherit.PNG">
 </p>
 
-<br/>
+> 위 예제는 [링크](https://kriss.io/composition-vs-inheritance-in-react-comparison-and-contrast/#.X_0ZZugzaUl)를 참조하였습니다.
 
 <br/>
 
